@@ -45,6 +45,19 @@ $(function() {
         var num = $("#n1");
         num.val(1/num.val());
       }
+		);
+		
+		$("#Ln").on("click", 
+      function() {
+        var num = $("#n1");
+        num.val(Math.log(num.val()));
+      }
+		);
+		$("#log").on("click", 
+      function() {
+        var num = $("#n1");
+        num.val(Math.log10(num.val()));
+      }
     );
 	/*-------memoria----*/
 	$("#amemo").on("click", function() { mem = $("#n1").val(); $("#mem").val(mem);});
@@ -118,6 +131,12 @@ $(function() {
 		
 	$("#xy").on("click", 
 		function (){acc= $("#n1").val(); op="xy";});	
+
+	$("#Lab").on("click", 
+		function (){acc= $("#n1").val(); op="Lab";});	
+			
+		}
+	);
 	
 	$("#igual").on("click", 
 	function (){
@@ -132,6 +151,8 @@ $(function() {
 		break;
 		case ("xy"): num =$("#n1").val(); $("#n1").val(Math.pow(acc, num));
 		break;
+		case ("Lab"): num =$("#n1").val(); $("#n1").val(Math.log(+acc)/Math.log(+num));
+		break;
 		}
 	
 	});
@@ -145,4 +166,4 @@ $(function() {
 		$("#n1").val(n);
 	});
 	
-  });
+  
